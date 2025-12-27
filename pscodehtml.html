@@ -153,12 +153,6 @@ padding:6px 2px;
 display:none;
 }
 
-.push {
-font:normal 100%/160% sans-serif;
-color:#666666;
-border:2px solid #dddddd;
-}
-
 .title,
 .txt {
 font:normal 90%/160% sans-serif;
@@ -189,7 +183,11 @@ margin:8px 8px 0 0;
 border-radius:8px;
 }
 
-.push {
+.push,
+.copy {
+font:normal 100%/160% sans-serif;
+color:#666666;
+border:2px solid #dddddd;
 padding:2px 12px;
 margin:8px 8px 0 0;
 border-radius:8px;
@@ -304,6 +302,8 @@ window.addEventListener('DOMContentLoaded',function(){
 
 phon();
 code();
+copy();
+cock();
 
 });
 
@@ -322,6 +322,18 @@ phoff();
 code();
 
 });
+
+// copy function
+function copy() {
+let text = document.querySelector("#txt");
+text.select();
+document.execCommand("copy");
+}
+
+// cock function
+function cock() {
+document.querySelector("#copy").addEventListener("click", copy);
+}
 
 // phon function
 function phon() {
@@ -542,6 +554,7 @@ phoff();
 <div class="inwd">
 <div class="inps">
 <label class="push"><input id="show" value="Push" type="button" onclick="push();">Push</label>
+<label class="copy"><input id="copy" value="Copy" type="button">Copy</label>
 </div>
 </div>
 
